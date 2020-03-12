@@ -1,0 +1,9 @@
+#! /bin/sh
+# shell for generating traveltimes by ray tracing 
+
+set -v 	#imprime na tela as entradas enquanto sao lidas
+
+rayt2d <vana01_nearest_smooth.bin par=rayt2d_vana.par 	#vana01_nearest_smooth.bin e o arquivo binario que tem o modelo de velocidade.# #rayt2d_vana.par tem os parametros pro comando rayt2d#
+
+exit
+

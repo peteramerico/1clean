@@ -1,0 +1,14 @@
+
+fzt=0 nzt=301 dzt=10
+fxt=0 nxt=618 dxt=50
+fs=50 ns=517 ds=50
+fxo=0 nxo=618 dxo=50
+fzo=0 nzo=1001 dzo=3
+offmax=4950
+aperx=26000 dxm=50 ntr=50000 ls=0
+v0=1500 dvz=0
+angmax=85 fmax=60
+jpfile=jpfile.kd
+ttfile=tfile_vana01_nearest
+
+

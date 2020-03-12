@@ -1,0 +1,30 @@
+#! /bin/bash
+
+offmin=50  
+offmax=4950
+doff=100   #era 100 no original mas to usando 50???????????
+np=24
+j=0
+filein=data.su 
+
+h=50
+set -x   #imprime na tela cada comando antes de executar
+
+while [ $h -le $offmax ]   #-le e less than or equal to (menor ou igual) -> enquanto h for menor ou igual a offmax#
+do
+    echo $h" metros"
+    j=$(($j + 1))
+    hhalf=$(($h / 2))
+    if [ $(($j%$np)) -eq 0 ]; then
+#Seleciona parte do dado-Common-offset com suwind
+	suwind < $filein key=offset min=$h max=$h >tmp$j.su \ 
+	sukdmig2d <tmp$j.su par=kdmig_vana.par > data_psdm_co$h.su
+    else
+	suwind < $filein key=offset min=$h max=$h >tmp$j.su  \ 
+	sukdmig2d < tmp$j.su par=kdmig_vana.par > data_psdm_co$h.su &	
+    fi
+    h=$(($h + $doff))
+done
+
+rm -f tmp*.su
+
