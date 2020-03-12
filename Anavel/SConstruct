@@ -1,0 +1,12 @@
+from rsf.proj import *
+
+for x in range(25, 26025, 500):
+    comando='''./sembl janela=5'''
+    filein="./cigcont{0}".format(x)+".rsf"
+    fileout="stk{0}".format(x)
+    pickout="pick{0}".format(x)
+    print pickout
+    Flow(fileout,filein,comando)
+    #Flow(pickout,fileout,'''ipick color=j allpos=y pclip=99.9''')
+
+End()
